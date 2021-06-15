@@ -11,3 +11,5 @@ Com a tecla "1" do teclado numérico, o jogador move para baixo a primeira tarta
 Com a tecla "2" do teclado numérico, o jogador move para baixo a segunda tartaruga, e com a tecla "5" do teclado numérico, a tartaruga retorna a sua posição inicial.
 
 Com a tecla "3" do teclado numérico, o jogador move para baixo a terceira tartaruga, e com a tecla "6" do teclado numérico, a tartaruga retorna a sua posição inicial.
+
+Referências: Os códigos utilizados na realização do trabalho foram apresentados em aula  e no seguinte link: https://youtu.be/YmkuAVx9o4w (Foram feitas modificações nos códigos mencionados no link inserido).
