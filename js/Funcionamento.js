@@ -69,7 +69,7 @@ function jogoIniciado (){
 	
 	
 	//-------------------------------------------------------------------------//
-	//Cria um evento que reconhece a situalção da tecla
+	//Cria um evento que reconhece a situação da tecla
 	//Quando é apertada uma tecla
 	window.addEventListener("keydown",pressionouTecla);
 	
@@ -225,24 +225,24 @@ function pressionouTecla(teclaPressionada){
 	//-------------------------------------------------------------------------//
 	//Reconhecendo teclas para o movimento das imagens
 	if(teclaPressionada.keyCode==100){
-		movimentacao = "up1";
+		movimentacao = "up1";//4
 	}
 	if(teclaPressionada.keyCode==97){
-		movimentacao = "down1";
+		movimentacao = "down1";//1
 	}
 	
 	if(teclaPressionada.keyCode==101){
-		movimentacao = "up2";
+		movimentacao = "up2";//5
 	}
 	if(teclaPressionada.keyCode==98){
-		movimentacao = "down2";
+		movimentacao = "down2";//2
 	}
 	
 	if(teclaPressionada.keyCode==102){
-		movimentacao = "up3";
+		movimentacao = "up3";//6
 	}
 	if(teclaPressionada.keyCode==99){
-		movimentacao = "down3";
+		movimentacao = "down3";//3
 	}		
 	//-------------------------------------------------------------------------//
 	
@@ -267,7 +267,7 @@ function despressionouTecla(){
 
 
 //-------------------------------------------------------------------------//
-//Inicia o sript		
+//Inicia o script		
 jogoIniciado();
 //-------------------------------------------------------------------------//
-				
+		
