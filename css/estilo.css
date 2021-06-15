@@ -1,0 +1,22 @@
+body {
+	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background-color: #2596be;
+
+}
+div{
+	margin-top:25px;
+}
+canvas {
+    border: 0.1px solid #000;
+    display: block;
+    margin: 0 auto;
+}
+#field{
+	float: relative;
+	margin-top:-166px;
+	margin-right:1px;
+	border: none;
+}
