@@ -6,7 +6,7 @@ alert('Tente adivinhar qual tartaruga tem a maior velocidade!')
 
 //-------------------------------------------------------------------------//
 //Definindo o canvas
-var ilustrador = document.getElementById("janela do jogo").getContext("2d");
+var ilustrador = document.getElementById("canvas").getContext("2d");
 //-------------------------------------------------------------------------//
 
 
@@ -43,13 +43,13 @@ var IY = 283;
 
 //-------------------------------------------------------------------------//
 //Definir a movimentação parada
-var direcao = "nenhuma";				
+var movimentacao = "nula";				
 //-------------------------------------------------------------------------//
 
 
 //-------------------------------------------------------------------------//
 //Mostra o que vai acontecer ao iniciar o jogo	
-function IniciaJogo (){
+function jogoIniciado (){
 	
 	
 	//-------------------------------------------------------------------------//
@@ -71,16 +71,16 @@ function IniciaJogo (){
 	//-------------------------------------------------------------------------//
 	//Cria um evento que reconhece a situalção da tecla
 	//Quando é apertada uma tecla
-	window.addEventListener("keydown",ApertouTeclado);
+	window.addEventListener("keydown",pressionouTecla);
 	
 	//Quando é solta uma tecla
-	window.addEventListener("keyup", SoltouTeclado);
+	window.addEventListener("keyup", despressionouTecla);
 	//-------------------------------------------------------------------------//
 	
 	
 	//-------------------------------------------------------------------------//
 	//Declara o objeto que põe as infomações na tela
-	DesenhaJogo();
+	jogoDesenhado();
 	//-------------------------------------------------------------------------//
 	
 	
@@ -90,7 +90,7 @@ function IniciaJogo (){
 
 //-------------------------------------------------------------------------//
 //Função do objeto
-function DesenhaJogo (){
+function jogoDesenhado (){
 	
 	
 	//-------------------------------------------------------------------------//
@@ -159,7 +159,7 @@ function DesenhaJogo (){
 	
 	//-------------------------------------------------------------------------//
 	//Faz uma animação no navegador		
-	requestAnimationFrame(DesenhaJogo);
+	requestAnimationFrame(jogoDesenhado);
 	//-------------------------------------------------------------------------//
 	
 	
@@ -174,11 +174,11 @@ function DesenhaJogo (){
 	ilustrador.drawImage(TartarugaM,TartarugaMX,TartarugaMY,TartarugaMA,TartarugaML);	
 
 	//Faz com que o Y da Tartaruga Pai volte a ser 285
-	if(direcao=="cima1"){
+	if(movimentacao=="up1"){
 		MY = 285;	
 	}
 	//Move o Y da Tartaruga Pai
-	if(direcao=="baixo1"){
+	if(movimentacao=="down1"){
 		MY = MY + 0.1;	
 	}
 	//-------------------------------------------------------------------------//
@@ -189,11 +189,11 @@ function DesenhaJogo (){
 	ilustrador.drawImage(TartarugaF,TartarugaFX,TartarugaFY,TartarugaFA,TartarugaFL);
 	
 	//Faz com que o Y da Tartaruga Mãe volte a ser 285
-	if(direcao=="cima2"){
+	if(movimentacao=="up2"){
 		FY = 285;	
 	}
 	//Move o Y da Tartaruga Mãe
-	if(direcao=="baixo2"){
+	if(movimentacao=="down2"){
 		FY = FY + 2;	
 	}
 	//-------------------------------------------------------------------------//
@@ -203,11 +203,11 @@ function DesenhaJogo (){
 	//Atualiza no navegador as propriedades da Tartaruga Filho
 	ilustrador.drawImage(TartarugaI,TartarugaIX,TartarugaIY,TartarugaIA,TartarugaIL);
 	//Faz com que o Y da Tartaruga Filho volte a ser 285
-	if(direcao=="cima3"){
+	if(movimentacao=="up3"){
 		IY = 283;	
 	}
 	//Move o Y da Tartaruga Filho
-	if(direcao=="baixo3"){
+	if(movimentacao=="down3"){
 		IY = IY + 0.5;	
 	}
 	//-------------------------------------------------------------------------//
@@ -219,30 +219,30 @@ function DesenhaJogo (){
 
 //-------------------------------------------------------------------------//			
 //Cria uma função que vai definir o que vai acontecer quando uma  tecla for apertada			
-function ApertouTeclado(teclaApertada){
+function pressionouTecla(teclaPressionada){
 	
 	
 	//-------------------------------------------------------------------------//
 	//Reconhecendo teclas para o movimento das imagens
-	if(teclaApertada.keyCode==100){
-		direcao = "cima1";
+	if(teclaPressionada.keyCode==100){
+		movimentacao = "up1";
 	}
-	if(teclaApertada.keyCode==97){
-		direcao = "baixo1";
-	}
-	
-	if(teclaApertada.keyCode==101){
-		direcao = "cima2";
-	}
-	if(teclaApertada.keyCode==98){
-		direcao = "baixo2";
+	if(teclaPressionada.keyCode==97){
+		movimentacao = "down1";
 	}
 	
-	if(teclaApertada.keyCode==102){
-		direcao = "cima3";
+	if(teclaPressionada.keyCode==101){
+		movimentacao = "up2";
 	}
-	if(teclaApertada.keyCode==99){
-		direcao = "baixo3";
+	if(teclaPressionada.keyCode==98){
+		movimentacao = "down2";
+	}
+	
+	if(teclaPressionada.keyCode==102){
+		movimentacao = "up3";
+	}
+	if(teclaPressionada.keyCode==99){
+		movimentacao = "down3";
 	}		
 	//-------------------------------------------------------------------------//
 	
@@ -253,12 +253,12 @@ function ApertouTeclado(teclaApertada){
 
 //-------------------------------------------------------------------------//
 //Cria uma função que vai definir o que vai acontecer quando uma  tecla deixar de ser apertada			
-function SoltouTeclado(){
+function despressionouTecla(){
 	
 	
 	//-------------------------------------------------------------------------//
 	//Para o movimento
-	direcao = "nenhuma";	
+	movimentacao = "nula";	
 	//-------------------------------------------------------------------------//	
 	
 	
@@ -268,6 +268,6 @@ function SoltouTeclado(){
 
 //-------------------------------------------------------------------------//
 //Inicia o sript		
-IniciaJogo();
+jogoIniciado();
 //-------------------------------------------------------------------------//
 				
