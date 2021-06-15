@@ -1,6 +1,6 @@
 # Go-Turtles
 
-Trabalho de LP
+Trabalho de DJW
 
 Participantes: Bryan Martinez e Guilherme Santos
 
